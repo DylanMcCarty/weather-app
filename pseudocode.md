@@ -1,4 +1,3 @@
-```
 do not use static functions that can't be updated in the event that it needs to be changed
 
 use if statements to determine which things will run in a function 
@@ -52,6 +51,7 @@ CREATE div for condtion
 CREATE div for image which populates dependent upon the condition
 
 # LOGIC breakdown
+```
 
 ```js
 ASYNC fetchFunction() {
