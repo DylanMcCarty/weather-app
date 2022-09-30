@@ -40,52 +40,11 @@ I would like to display a background image as the condition reflector.
 
 -----
 
-# ELEMENT Breakdown
+# LOGIC Breakdown
 
 ```js
-CREATE div for header 
-CREATE div for button and input 
-CREATE div for city display 
-CREATE div for temperature 
-CREATE div for condtion 
-CREATE div for image which populates dependent upon the condition
 
-# LOGIC breakdown
-```
-
-```js
-ASYNC fetchFunction() {
-    Get api info 
-        get response 
-        get info i need
-}        
-
-
-ARRAY [
-    OBJECT
-    {
-        API CITY
-    },
-    {
-        API TEMPERATURE
-    }
-    {
-        API CONDITION 
-    }
-    {
-        changeImageBasedOnCondition
-    }
-]
-
-changeImageBasedOnCondition() {
-    CHECK condition of object 
-    IF (condition) {
-        return image
-    }
-}
-
-ARRAY2 [    
-    
-]
+I lITERALLY DONT KNOW WHAT TO FUCKING DO!
+COOl
 
 
