@@ -8,23 +8,25 @@ createInputDiv1.appendChild(createInputDiv2)
 createInputDiv2.appendChild(createinput)
 createinput.id = 'input'
 bootStrap(createInputDiv1, 'container')
-bootStrap(createInputDiv2, 'row')
-bootStrap(createinput, 'col')
+bootStrap(createInputDiv2, 'row justify-content-center')
+bootStrap(createinput, 'col-5 col-lg-6')
 // everything below this creates the button 
 var createbutton = document.createElement('button')
 var createBtnDiv = document.createElement('div')
-var createBtnDiv2 = document.createElement('div')
+// var createBtnDiv2 = document.createElement('div')
 document.body.appendChild(createBtnDiv)
-document.body.appendChild(createBtnDiv2)
+// document.body.appendChild(createBtnDiv2)
 document.body.appendChild(createbutton)
 createBtnDiv.appendChild(createbutton)
-createBtnDiv2.appendChild(createBtnDiv)
+// createBtnDiv2.appendChild(createBtnDiv)
+createInputDiv2.appendChild(createbutton)
 createbutton.textContent = 'Get The Weather'
 createbutton.id = 'weatherbtn'
-createBtnDiv.className = 'row'
-createBtnDiv2.className = 'container'
-createbutton.className = 'col'
+// createBtnDiv.className = 'row'
+// createBtnDiv2.className = 'container'
+createbutton.className = 'col-5 col-lg-6'
 createbutton.addEventListener('click',() => {
+    // reloadDiv()
     populate()
     });
 }
@@ -64,24 +66,46 @@ async function populate() {
     document.body.appendChild(creatediv7)
     creatediv2.textContent = apiData.data.weather[0].main;
     creatediv3.textContent = apiData.data.name;
-    creatediv.textContent = fahrenheit
-    creatediv4.textContent = celsius
-    creatediv5.textContent = kelvin
+    creatediv.innerHTML = "Fahrenheit:" + "<br>" + fahrenheit.toFixed(1)
+    creatediv4.innerHTML = "Celsius:" + "<br>" + celsius.toFixed(1)
+    creatediv5.innerHTML = "Kelvin:" + "<br>" + kelvin.toFixed(1)
     creatediv6.appendChild(creatediv4)
     creatediv6.appendChild(creatediv5)
     creatediv6.appendChild(creatediv)
     creatediv7.appendChild(creatediv6)
-    bootStrap(creatediv7, "container");
+    bootStrap(creatediv7, "container text-center");
     bootStrap(creatediv6, "row");
-    bootStrap(creatediv5, "col")
-    bootStrap(creatediv, "col")
-    bootStrap(creatediv4, "col")
+    bootStrap(creatediv5, "col border")
+    bootStrap(creatediv, "col border")
+    bootStrap(creatediv4, "col border")
+    bootStrap(creatediv3, "text-center")
+    bootStrap(creatediv2, "text-center")
+    creatediv.id = 'div1' 
+    creatediv2.id = 'div2'
+    creatediv3.id = 'div3'
+    creatediv4.id = 'div4'
+    creatediv5.id = 'div5'
+    creatediv6.id = 'div6'
+    creatediv7.id = 'div7'
 }
 
+// async function reloadDiv () {
+//     if (document.getElementById('div1').textContent = null){
+//         populate()
+//     } else {
+//     document.getElementById("div1").textContent.replace
+//     document.getElementById("div2").textContent.replace
+//     document.getElementById("div3").textContent.replace
+//     document.getElementById("div4").textContent.replace
+//     document.getElementById("div5").textContent.replace
+//     document.getElementById("div6").textContent.replace
+//     document.getElementById("div7").textContent.replace
+//     }
+// }
 
 function bootStrap(varName, classes,) {
-    varName.className = classes
-    }
+   varName.className = classes
+}
 
     
 // function populatePage(type,  ) {
