@@ -1,8 +1,39 @@
+function createbutton() {
+    //everything below this creates the input 
+var createInputDiv1 = document.createElement('div')
+var createInputDiv2 = document.createElement('div')
+var createinput = document.createElement('input')
+document.body.appendChild(createInputDiv1)
+createInputDiv1.appendChild(createInputDiv2)
+createInputDiv2.appendChild(createinput)
+createinput.id = 'input'
+bootStrap(createInputDiv1, 'container')
+bootStrap(createInputDiv2, 'row')
+bootStrap(createinput, 'col')
+// everything below this creates the button 
+var createbutton = document.createElement('button')
+var createBtnDiv = document.createElement('div')
+var createBtnDiv2 = document.createElement('div')
+document.body.appendChild(createBtnDiv)
+document.body.appendChild(createBtnDiv2)
+document.body.appendChild(createbutton)
+createBtnDiv.appendChild(createbutton)
+createBtnDiv2.appendChild(createBtnDiv)
+createbutton.textContent = 'Get The Weather'
+createbutton.id = 'weatherbtn'
+createBtnDiv.className = 'row'
+createBtnDiv2.className = 'container'
+createbutton.className = 'col'
+createbutton.addEventListener('click',() => {
+    populate()
+    });
+}
+createbutton()
 
-
-let zipCode = 40391
 
 async function getData() {
+    let inputtarget = document.getElementById('input')
+    let zipCode = inputtarget.value
     let res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},US&appid=6e4983b4ecb4d70fa0b0ceb5b9f40012`)
     let data = res
     apiData = data
@@ -11,9 +42,6 @@ async function getData() {
     
 
 let apiData 
-getData()
-
-
 
 async function populate() {
     await getData()
@@ -49,7 +77,7 @@ async function populate() {
     bootStrap(creatediv, "col")
     bootStrap(creatediv4, "col")
 }
-populate()
+
 
 function bootStrap(varName, classes,) {
     varName.className = classes
